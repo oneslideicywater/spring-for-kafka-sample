@@ -18,7 +18,7 @@ public class KafkaListenerApplication {
     @Bean
     public CommandLineRunner commandLineRunner(){
         return args -> {
-                producer.sendMessage("牛逼");
+            producer.sendMessage();
         };
     }
 }

@@ -9,10 +9,13 @@ spring:
         sasl.mechanism: PLAIN
     bootstrap-servers: 192.168.0.163:9092
     producer:
-      bootstrap-servers: 192.168.0.163:9092
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
       properties:
         sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="alice" password="alice-secret";
         security.protocol: SASL_PLAINTEXT
         sasl.mechanism: PLAIN
+    admin:
+      properties:
+        sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="alice" password="alice-secret";
+        security.protocol: SASL_PLAINTEXT
+        sasl.mechanism: PLAIN
+
